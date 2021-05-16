@@ -99,4 +99,4 @@ class Solution2 {
 }
 
 // Time complexity : O(S) where S is the sum of all characters in all strings.
-// Space complexity : O(1) - We only used constant extra space. 
+// Space complexity : O(2) - We only used constant extra space. 
