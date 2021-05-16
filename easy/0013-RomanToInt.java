@@ -85,3 +85,50 @@ class Solution {
         return sum;
     }
 }
+
+// another solution to avoid using a HashMap is to use a switch case inline:
+// Time Complexity: Linear - O(n) - O of n where n is the length of string
+// Space Complexity: Constant - O(3) - O of 3
+
+class Solution2 {
+    private int getNumericValue(Character ch) {
+        switch(ch) {
+            case 'I': 
+                return 1;
+            case 'V': 
+                return 5;
+            case 'X': 
+                return 10;
+            case 'L': 
+                return 50;
+            case 'C': 
+                return 100;
+            case 'D': 
+                return 500;
+            case 'M': 
+                return 1000;
+            default:
+                return 0;
+        }
+    }
+    public int romanToInt(String s) {
+        if (s == null || s.length() == 0) {
+            return 0;
+        }
+        
+        int sum = getNumericValue(s.charAt(s.length() - 1));
+        
+        for (int i = s.length() - 2; i >= 0; i--) {
+            char first = s.charAt(i); 
+            char second = s.charAt(i + 1);
+            
+            if (getNumericValue(first) < getNumericValue(second)) {
+                sum -= getNumericValue(first);
+            } else {
+                sum += getNumericValue(first);
+            }
+        }
+        
+        return sum;
+    }
+}
