@@ -38,6 +38,9 @@ Constraints:
 // However, if the reversed number is larger than int.MAX
 // we will hit integer overflow problem.
 
+// Time Complexity: Logarithmic - O(log(n)) - O of Log N to the base 10
+// Space Complexity: Constant - O(1) - O of 1
+
 class Solution {
     public boolean isPalindrome(int x) {
         if(x < 0) {
