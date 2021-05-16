@@ -36,13 +36,13 @@ class Solution {
         while (num != 0) {
             int reminder = num % 10;
             
-            // Greater than 7 Because (pow(2,31) - 1) is the highest limit of int and the last digit of this ((Math.pow(2,31) % 10) - 1) is 7. So, if the next number is greater than this, then we should return 0
+            // Greater than 7 Because (pow(2,31) - 1) is the highest limit of postive int and the last digit of this ((Math.pow(2,31) % 10) - 1) is 7. So, if the next number is greater than this, then we should return 0
 
             if (reversed > Integer.MAX_VALUE/10 || (reversed == Integer.MAX_VALUE / 10 && reminder > 7)) {
                 return 0;
             }   
 
-            // Lesser than -8 Because (pow(2,31) - 1) is the highest limit of int and the last digit of this (Math.pow(-2,31) % 10) is -8. So, if the next number is smaller than this, then we should return 0
+            // Lesser than -8 Because pow(-2,31) is the highest limit of negative int and the last digit of this (Math.pow(-2,31) % 10) is -8. So, if the next number is smaller than this, then we should return 0
             if (reversed < Integer.MIN_VALUE/10 || (reversed == Integer.MIN_VALUE / 10 && reminder < -8)) {
                 return 0;
             }
